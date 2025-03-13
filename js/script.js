@@ -340,7 +340,7 @@ class PhotoAlbum {
     const pathSegments = window.location.pathname.split("/");
     const repoName = pathSegments[1];
 
-    img.src = `/assets/images/colombia-${index + 1}.jpg`;
+    img.src = `/album-photo/assets/images/colombia-${index + 1}.jpg`;
     img.alt = `Colombia Trip ${index + 1}`;
   }
 
