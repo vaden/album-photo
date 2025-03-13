@@ -29,9 +29,9 @@ class PhotoAlbum {
       // Récupérer dynamiquement le nom du dépôt depuis l'URL
       const pathSegments = window.location.pathname.split("/");
       const repoName = pathSegments[1];
-      img.src = `/assets/images/background${i}.webp`;
+      img.src = `/album-photo/assets/images/background${i}.webp`;
       img.style.borderRadius = "20px";
-      this.backgrounds.push(`/assets/images/background${i}.webp`);
+      this.backgrounds.push(`/album-photo/assets/images/background${i}.webp`);
     }
   }
 
@@ -633,7 +633,7 @@ class PhotoAlbum {
       const pathSegments = window.location.pathname.split("/");
       const repoName = pathSegments[1];
       easterEggContainer.appendChild(easterEggImg);
-      easterEggImg.src = `/assets/images/easter-eggs/easter-egg-${index}.jpg`;
+      easterEggImg.src = `/album-photo/assets/images/easter-eggs/easter-egg-${index}.jpg`;
     });
 
     document.body.appendChild(easterEggContainer);
