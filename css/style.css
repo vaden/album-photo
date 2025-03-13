@@ -107,7 +107,6 @@ body {
   object-fit: contain;
   margin-bottom: 10px;
   border-radius: 15px;
-  transform: translate(-50%, -50%);
   transition: transform 0.3s ease-in-out;
 }
 
@@ -118,118 +117,17 @@ body {
 
 .page img:hover {
   cursor: zoom-in;
-  transform: scale(1.03) translate(-50%, -50%);
-}
-
-.controls {
-  position: fixed;
-  display: flex;
-  align-items: center;
-  bottom: 20px;
-  gap: 20px;
-  z-index: 1000;
-}
-
-.controls button {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: none;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 24px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.controls button:hover {
-  background-color: rgba(255, 255, 255, 1);
-  transform: scale(1.1);
-}
-
-button {
-  padding: 10px 20px;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.cover {
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  -webkit-text-stroke: #000 1px;
-  font-size: 1.5em;
-  border-radius: 20px;
-}
-
-.cover h1 {
-  margin: 0;
-}
-
-.first-cover {
-  background: no-repeat center/100%
-    url("/album-photo/assets/images/bird-col.webp");
-}
-
-.final-cover {
-  background: no-repeat center/100%
-    url("/album-photo/assets/images/background9.webp");
-}
-
-.final-cover .content-wrapper {
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.3
-  ); /* Add some overlay for better text visibility */
-  border-radius: 20px;
-}
-
-/* Style spécifique pour Turn.js */
-#book {
-  margin: 0 auto;
-}
-
-.page {
-  background-color: #fff;
-  background-size: cover;
-  background-position: center;
-}
-
-/* Ombre de page */
-#book .turn-page {
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Effet de gradient pendant le tournage */
-#book .shadow,
-#book.shadow {
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-}
-
-/* Amélioration pour que la page active reste avec ses effets */
-#book .page.active {
-  opacity: 1;
-}
-
-.phrase {
-  font-size: 1.1em;
+  transform: scale(1.03);
 }
 
 /* Style pour la navigation */
 nav.controls {
   position: fixed;
-  bottom: 20px;
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   align-items: center;
-  gap: 20px;
   z-index: 1000;
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 25px;
@@ -246,7 +144,7 @@ nav.controls button {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 24px;
+  font-size: 1.1em;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
@@ -304,6 +202,62 @@ nav.controls button:hover {
   background-color: var(--colombia-red);
 }
 
+.cover {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-stroke: #000 1px;
+  font-size: 1.5em;
+  border-radius: 20px;
+}
+
+.cover h1 {
+  margin: 0;
+}
+
+.first-cover {
+  background: no-repeat center/100%
+    url("/album-photo/assets/images/bird-col.webp");
+}
+
+.final-cover {
+  background: no-repeat center/100%
+    url("/album-photo/assets/images/background9.webp");
+}
+
+/* Style spécifique pour Turn.js */
+#book {
+  margin: 0 auto;
+}
+
+.page {
+  background-color: #fff;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Ombre de page */
+#book .turn-page {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Effet de gradient pendant le tournage */
+#book .shadow,
+#book.shadow {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Amélioration pour que la page active reste avec ses effets */
+#book .page.active {
+  opacity: 1;
+}
+
+.phrase {
+  font-size: 1.1em;
+}
+
 /* Animation pendant le retournement */
 #book .turn-page {
   transition: opacity 0.2s ease;
@@ -323,9 +277,6 @@ nav.controls button:hover {
     margin: auto;
     display: block;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
   }
 
   .cover.first-cover,

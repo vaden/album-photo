@@ -26,9 +26,7 @@ class PhotoAlbum {
   loadBackgrounds() {
     for (let i = 1; i <= 9; i++) {
       const img = new Image();
-      // Récupérer dynamiquement le nom du dépôt depuis l'URL
-      const pathSegments = window.location.pathname.split("/");
-      const repoName = pathSegments[1];
+
       img.src = `/album-photo/assets/images/background${i}.webp`;
       img.style.borderRadius = "20px";
       this.backgrounds.push(`/album-photo/assets/images/background${i}.webp`);
