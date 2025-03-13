@@ -29,9 +29,9 @@ class PhotoAlbum {
       // Récupérer dynamiquement le nom du dépôt depuis l'URL
       const pathSegments = window.location.pathname.split("/");
       const repoName = pathSegments[1];
-      img.src = `/${repoName}/assets/images/background${i}.webp`;
+      img.src = `/assets/images/background${i}.webp`;
       img.style.borderRadius = "20px";
-      this.backgrounds.push(`/${repoName}/assets/images/background${i}.webp`);
+      this.backgrounds.push(`/assets/images/background${i}.webp`);
     }
   }
 
@@ -222,11 +222,17 @@ class PhotoAlbum {
 
   playBackgroundMusic() {
     const backgroundMusic = document.getElementById("background-music");
+
     if (backgroundMusic) {
-      backgroundMusic.volume = 0.07;
-      backgroundMusic.play().catch((error) => {
-        console.error("Error playing background music:", error);
-      });
+      document.addEventListener(
+        "click",
+        function () {
+          backgroundMusic.volume = 0.07;
+          // Essayer de jouer l'audio après un clic quelque part sur la page
+          backgroundMusic.play().catch((e) => console.log("Erreur audio:", e));
+        },
+        { once: true }
+      );
     }
   }
 
@@ -334,7 +340,7 @@ class PhotoAlbum {
     const pathSegments = window.location.pathname.split("/");
     const repoName = pathSegments[1];
 
-    img.src = `${repoName}/assets/images/colombia-${index + 1}.jpg`;
+    img.src = `/assets/images/colombia-${index + 1}.jpg`;
     img.alt = `Colombia Trip ${index + 1}`;
   }
 
@@ -627,7 +633,7 @@ class PhotoAlbum {
       const pathSegments = window.location.pathname.split("/");
       const repoName = pathSegments[1];
       easterEggContainer.appendChild(easterEggImg);
-      easterEggImg.src = `${repoName}/assets/images/easter-eggs/easter-egg-${index}.jpg`;
+      easterEggImg.src = `/assets/images/easter-eggs/easter-egg-${index}.jpg`;
     });
 
     document.body.appendChild(easterEggContainer);
