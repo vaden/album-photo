@@ -665,7 +665,6 @@ class PhotoAlbum {
       align-items: center;
       z-index: 1000;
       cursor: zoom-out;
-      transform: translate(-50%, -50%);
       opacity: 0;
       transition: opacity 0.3s ease;
     `;

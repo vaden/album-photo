@@ -283,6 +283,10 @@ nav.controls button:hover {
     transform: translate(-50%, -50%);
   }
 
+  .page img:hover {
+    cursor: zoom-in;
+  }
+
   .cover.first-cover,
   .cover.final-cover {
     background-size: cover;
