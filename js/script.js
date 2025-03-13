@@ -328,7 +328,10 @@ class PhotoAlbum {
     });
 
     // Commencer le chargement de l'image (remettez votre chemin d'origine)
-    img.src = `/album-photo/assets/images/colombia-${index + 1}.jpg`;
+    const basePath = window.location.hostname.includes("github.io")
+      ? "/album-photo"
+      : "";
+    img.src = `${basePath}/assets/images/colombia-${index + 1}.jpg`;
     img.alt = `Colombia Trip ${index + 1}`;
   }
 
