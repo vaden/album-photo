@@ -28,7 +28,7 @@ class PhotoAlbum {
       const img = new Image();
       img.src = `../assets/images/background${i}.webp`;
       img.style.borderRadius = "20px";
-      this.backgrounds.push(`../assets/images/background${i}.webp`);
+      this.backgrounds.push(`album-photo/assets/images/background${i}.webp`);
     }
   }
 
@@ -328,7 +328,7 @@ class PhotoAlbum {
     });
 
     // Commencer le chargement de l'image (remettez votre chemin d'origine)
-    img.src = `../assets/images/colombia-${index + 1}.jpg`;
+    img.src = `/album-photo/assets/images/colombia-${index + 1}.jpg`;
     img.alt = `Colombia Trip ${index + 1}`;
   }
 
@@ -619,7 +619,7 @@ class PhotoAlbum {
       `;
 
       easterEggContainer.appendChild(easterEggImg);
-      easterEggImg.src = `../assets/images/easter-eggs/easter-egg-${index}.jpg`;
+      easterEggImg.src = `/album-photo/assets/images/easter-eggs/easter-egg-${index}.jpg`;
     });
 
     document.body.appendChild(easterEggContainer);

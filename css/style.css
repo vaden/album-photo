@@ -171,11 +171,13 @@ button {
 }
 
 .first-cover {
-  background: no-repeat center/100% url("../assets/images/bird-col.webp");
+  background: no-repeat center/100%
+    url("/album-photo/assets/images/bird-col.webp");
 }
 
 .final-cover {
-  background: no-repeat center/100% url("../assets/images/background9.webp");
+  background: no-repeat center/100%
+    url("/album-photo/assets/images/background9.webp");
 }
 
 .final-cover .content-wrapper {
