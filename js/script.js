@@ -467,9 +467,11 @@ class PhotoAlbum {
     if (position === "top-left") {
       phrase.style.top = "10%";
       phrase.style.left = "10%";
+      phrase.style.transform = "rotate(-20deg)";
     } else if (position === "top-right") {
       phrase.style.top = "10%";
       phrase.style.right = "10%";
+      phrase.style.transform = "rotate(20deg)";
     } else if (position === "bottom-left") {
       phrase.style.bottom = "10%";
       phrase.style.left = "10%";
@@ -663,6 +665,7 @@ class PhotoAlbum {
       align-items: center;
       z-index: 1000;
       cursor: zoom-out;
+      transform: translate(-50%, -50%);
       opacity: 0;
       transition: opacity 0.3s ease;
     `;
