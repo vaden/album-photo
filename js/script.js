@@ -26,9 +26,12 @@ class PhotoAlbum {
   loadBackgrounds() {
     for (let i = 1; i <= 9; i++) {
       const img = new Image();
-      img.src = `../assets/images/background${i}.webp`;
+      // Récupérer dynamiquement le nom du dépôt depuis l'URL
+      const pathSegments = window.location.pathname.split("/");
+      const repoName = pathSegments[1];
+      img.src = `/${repoName}/assets/images/background${i}.webp`;
       img.style.borderRadius = "20px";
-      this.backgrounds.push(`album-photo/assets/images/background${i}.webp`);
+      this.backgrounds.push(`/${repoName}/assets/images/background${i}.webp`);
     }
   }
 
@@ -327,11 +330,11 @@ class PhotoAlbum {
       this.processImageQueue();
     });
 
-    // Commencer le chargement de l'image (remettez votre chemin d'origine)
-    const basePath = window.location.hostname.includes("github.io")
-      ? "/album-photo"
-      : "";
-    img.src = `${basePath}/assets/images/colombia-${index + 1}.jpg`;
+    // Récupérer dynamiquement le nom du dépôt depuis l'URL
+    const pathSegments = window.location.pathname.split("/");
+    const repoName = pathSegments[1];
+
+    img.src = `${repoName}/assets/images/colombia-${index + 1}.jpg`;
     img.alt = `Colombia Trip ${index + 1}`;
   }
 
@@ -620,9 +623,11 @@ class PhotoAlbum {
         transition: opacity 0.3s ease-in-out;
         opacity: 0;
       `;
-
+      // Récupérer dynamiquement le nom du dépôt depuis l'URL
+      const pathSegments = window.location.pathname.split("/");
+      const repoName = pathSegments[1];
       easterEggContainer.appendChild(easterEggImg);
-      easterEggImg.src = `/album-photo/assets/images/easter-eggs/easter-egg-${index}.jpg`;
+      easterEggImg.src = `${repoName}/assets/images/easter-eggs/easter-egg-${index}.jpg`;
     });
 
     document.body.appendChild(easterEggContainer);
