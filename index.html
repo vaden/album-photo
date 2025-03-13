@@ -1,0 +1,54 @@
+<!-- Modifications à apporter à votre index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colombia Trip Album</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Ajouter la police Lilita One depuis Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="lilita-one-regular">
+    <div class="book">
+      <div class="pages-container">
+        <!-- Cover -->
+        <div class="page cover first-cover">
+          <h1>The loving road</h1>
+        </div>
+        <!-- Tout est ajouté dynamiquement par JavaScript -->
+        <div id="pages"></div>
+        <!-- Final Cover -->
+        <div class="page cover final-cover">
+          <h1 class="lilita-one-regular">This is just the beginning...</h1>
+        </div>
+      </div>
+      <!-- Navigation -->
+      <nav class="controls">
+        <button id="prev" class="prev-btn">←</button>
+        <span id="page-number">1</span>
+        <button id="next" class="next-btn">→</button>
+        <input
+          type="number"
+          id="goto-page"
+          min="1"
+          max="48"
+          placeholder="Numero"
+        />
+        <button id="goto-btn">Go</button>
+      </nav>
+    </div>
+    <audio
+      id="background-music"
+      src="assets/audio/musica-amor.mp3"
+      loop
+    ></audio>
+    <!-- Les scripts seront ajoutés dynamiquement par JavaScript -->
+    <script src="js/script.js"></script>
+  </body>
+</html>

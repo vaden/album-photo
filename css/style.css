@@ -1,0 +1,368 @@
+:root {
+  --page-width: 90vw;
+  --page-height: 90vh;
+  --colombia-yellow: hsl(48, 100%, 50%);
+  --colombia-blue: hsl(214, 100%, 28%);
+  --colombia-red: hsl(352, 85%, 42%);
+}
+
+.lilita-one-regular {
+  font-family: "Lilita One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f0f0f0;
+}
+
+.book {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+#book {
+  border-radius: 20px;
+}
+
+#pages {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.pages-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  perspective: 2000px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.6s;
+  backface-visibility: hidden;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.page.flip {
+  transform: rotateY(-180deg);
+  transform-origin: right center;
+}
+
+.page.flip-back {
+  transform: rotateY(0deg);
+  transform-origin: left center;
+}
+
+.page.flip .content-wrapper {
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  border-radius: 20px;
+}
+
+.page.flip-back .content-wrapper {
+  transform: rotateY(0deg);
+  backface-visibility: hidden;
+  border-radius: 20px;
+}
+
+.content-wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  backdrop-filter: blur(0.5px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.page img {
+  max-width: 95%; /* Instead of width: 100% */
+  max-height: 80vh;
+  object-fit: contain;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.page,
+.content-wrapper {
+  transition: background-color 0.6s ease, transform 0.6s;
+}
+
+.page img:hover {
+  cursor: zoom-in;
+  transform: scale(1.03) translate(-50%, -50%);
+}
+
+.controls {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  bottom: 20px;
+  gap: 20px;
+  z-index: 1000;
+}
+
+.controls button {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.controls button:hover {
+  background-color: rgba(255, 255, 255, 1);
+  transform: scale(1.1);
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.cover {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  -webkit-text-stroke: #000 1px;
+  font-size: 1.5em;
+  border-radius: 20px;
+}
+
+.cover h1 {
+  margin: 0;
+}
+
+.first-cover {
+  background: no-repeat center/100% url("../assets/images/bird-col.webp");
+}
+
+.final-cover {
+  background: no-repeat center/100% url("../assets/images/background9.webp");
+}
+
+.final-cover .content-wrapper {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.3
+  ); /* Add some overlay for better text visibility */
+  border-radius: 20px;
+}
+
+/* Style spécifique pour Turn.js */
+#book {
+  margin: 0 auto;
+}
+
+.page {
+  background-color: #fff;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Ombre de page */
+#book .turn-page {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Effet de gradient pendant le tournage */
+#book .shadow,
+#book.shadow {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Amélioration pour que la page active reste avec ses effets */
+#book .page.active {
+  opacity: 1;
+}
+
+.phrase {
+  font-size: 1.1em;
+}
+
+/* Style pour la navigation */
+nav.controls {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 25px;
+  padding: 10px 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+nav.controls button {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+nav.controls button:hover {
+  background-color: rgba(255, 255, 255, 1);
+  transform: scale(1.1);
+}
+
+#goto-page {
+  width: 50px;
+  padding: 5px;
+  font-size: 16px;
+  color: var(--colombia-blue);
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+}
+
+#goto-btn {
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: var(--colombia-yellow);
+  border: none;
+  border-radius: 50%;
+  color: var(--colombia-blue);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#goto-btn:hover {
+  background-color: var(--colombia-red);
+  transform: scale(1.1);
+}
+
+#page-number {
+  font-size: 20px;
+  color: var(--colombia-blue);
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+#page-number:focus {
+  border-color: var(--colombia-blue);
+}
+
+/* Appliquer les couleurs du drapeau colombien aux boutons */
+nav.controls button {
+  background-color: var(--colombia-yellow);
+  color: var(--colombia-blue);
+}
+
+nav.controls button:hover {
+  background-color: var(--colombia-red);
+}
+
+/* Animation pendant le retournement */
+#book .turn-page {
+  transition: opacity 0.2s ease;
+}
+
+/* Optimisation pour mobile */
+@media screen and (max-width: 768px) {
+  #book {
+    width: 95vw !important;
+    height: 85vh !important;
+  }
+
+  .page img {
+    max-width: 90%;
+    max-height: 70vh;
+    object-fit: contain;
+    margin: auto;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .cover.first-cover,
+  .cover.final-cover {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .phrase {
+    font-size: 1.5em;
+  }
+
+  .controls {
+    gap: 10px;
+  }
+
+  .controls button {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  #goto-page {
+    width: 40px;
+    font-size: 14px;
+  }
+
+  nav.controls {
+    gap: 10px;
+  }
+
+  nav.controls button {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  #goto-page {
+    width: 40px;
+    font-size: 14px;
+  }
+}
